@@ -1,3 +1,5 @@
+GIFcommit00010
+
 # Layout study — seven pages of Northwestern Mutual, as GIFmutual
 
 **Live:** [`https://gregoryedgerton.github.io/golden-grids-study-11-northwestern/`](https://gregoryedgerton.github.io/golden-grids-study-11-northwestern/)
