@@ -55,7 +55,8 @@
     "GIFmutual as an insurer. The name is a parody made for this study; it sells nothing, holds no licence and has no ratings, prices or dividends.",
     "The advisor, the team, the office address and the telephone number.",
     "Every sentence, which is the study's own; none of the reference's copy, ratings, rankings or prices is carried over.",
-    "The calculators' methods, which are the study's and are printed where they are used. They quote no premium, and no form sends anything."
+    "The calculators' methods, which are the study's and are printed where they are used. They quote no premium, and no form sends anything.",
+    "Left out on purpose: the reference's log-in and claims links, and the newsletter's name fields. The newsletter keeps one email box, which sends nothing."
   ],
   "assets": [
     {
@@ -76,5 +77,5 @@
   ],
   "owner": "Northwestern Mutual",
   "repo": "https://github.com/gregoryedgerton/golden-grids-study-11-northwestern",
-  "updated": "October 9, 2026"
+  "updated": "October 17, 2026"
 }

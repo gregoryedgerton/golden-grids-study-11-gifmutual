@@ -25,7 +25,7 @@ function Num({ label, value, set, step, min = 0, max, hint }: { label: string; v
   return (
     <div className="wfield">
       <label htmlFor={id}>{label}</label>
-      <input id={id} type="number" inputMode="numeric" min={min} max={max} step={step} value={value}
+      <input id={id} type="number" inputMode="numeric" autoComplete="off" min={min} max={max} step={step} value={value}
         onChange={(e) => { const n = Number(e.target.value); set(Math.min(max ?? Infinity, Math.max(min, Number.isFinite(n) ? n : 0))); }} />
       {hint && <span className="wfield__hint">{hint}</span>}
     </div>
@@ -71,7 +71,7 @@ export function CostGuess({ tone = "sky" }: { tone?: string }) {
       <h3 className="wq">A healthy man of 30 wants $250,000 of cover for 20 years. What does it cost a year?</h3>
       <div className="wfield">
         <label htmlFor={id}>Your guess: <strong>{money(guess)}</strong> a year</label>
-        <input id={id} type="range" min={0} max={3000} step={25} value={guess} onChange={(e) => { setGuess(Number(e.target.value)); setShown(false); }} />
+        <input id={id} type="range" autoComplete="off" min={0} max={3000} step={25} value={guess} onChange={(e) => { setGuess(Number(e.target.value)); setShown(false); }} />
         <span className="wfield__hint wrange"><span>$0</span><span>$3,000</span></span>
       </div>
       <button type="button" className="btn btn--line" onClick={() => setShown(true)}>Show the accepted price</button>
@@ -103,7 +103,7 @@ export function TermPicker({ tone = "sun" }: { tone?: string }) {
         <Num label="Youngest child's age" value={age} set={setAge} step={1} max={25} />
         <Num label="Years left on the mortgage" value={mortgage} set={setMortgage} step={1} max={40} />
       </div>
-      <label className="wcheck"><input type="checkbox" checked={college} onChange={(e) => setCollege(e.target.checked)} /> Cover four years of college</label>
+      <label className="wcheck"><input type="checkbox" autoComplete="off" checked={college} onChange={(e) => setCollege(e.target.checked)} /> Cover four years of college</label>
       <div className="wresult" role="status">
         <ol className="wsteps" aria-label="Term lengths">{steps.map((st) => <li key={st} className={st === term ? "is-on" : undefined}><span>{st}</span> years</li>)}</ol>
         <p className="wbig">{term} <span>years</span></p>
@@ -124,7 +124,7 @@ export function Multiple({ tone = "sun" }: { tone?: string }) {
       <Num label="Annual income" value={income} set={setIncome} step={5000} />
       <div className="wfield">
         <label htmlFor={id}>Multiple of income: <strong>{m}×</strong></label>
-        <input id={id} type="range" min={5} max={15} step={1} value={m} onChange={(e) => setM(Number(e.target.value))} />
+        <input id={id} type="range" autoComplete="off" min={5} max={15} step={1} value={m} onChange={(e) => setM(Number(e.target.value))} />
         <span className="wfield__hint wrange"><span>5×</span><span>15×</span></span>
       </div>
       <div className="wresult" role="status">

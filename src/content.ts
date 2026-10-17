@@ -48,11 +48,10 @@ export const SOURCE = {
 };
 
 export const NAV: [string, string][] = [["About us", "#"], ["Financial planning", "#"], ["Insurance", "./life-insurance.html"], ["Calculator", "./disability-calculator.html"], ["Investments", "#"], ["Life & Money", "./guide.html"]];
-export const UTILITY = ["Log in", "Claims"];
 export const FOOTER: [string, [string, string][]][] = [
   ["Insurance", [["Life insurance", "./life-insurance.html"], ["Term life", "./term-life.html"], ["Whole life", "./whole-life.html"], ["Life Insurance Guide", "./guide.html"], ["Disability income calculator", "./disability-calculator.html"]]],
   ["Planning", [["Financial planning", "#"], ["Retirement", "#"], ["College savings", "#"], ["Estate planning", "#"], ["Long-term care", "#"]]],
-  ["Working with us", [["Find a financial advisor", "./advisor.html"], ["Working with an advisor", "./advisor.html"], ["Claims", "#"], ["Careers", "#"], ["Contact us", "#"]]],
+  ["Working with us", [["Find a financial advisor", "./advisor.html"], ["Working with an advisor", "./advisor.html"], ["Careers", "#"], ["Contact us", "#"]]],
   ["About", [["Who we are", "#"], ["Newsroom", "#"], ["Security and privacy", "#"], ["Legal notice", "#"], ["Sitemap", "#"]]],
 ];
 

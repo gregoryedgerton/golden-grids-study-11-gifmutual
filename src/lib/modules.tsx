@@ -42,13 +42,11 @@ export function Newsletter() {
     <section className="news" aria-labelledby="news-title">
       <div className="wrap news__card">
         <h2 id="news-title" className="news__title">Get financial tips, tools and more with our monthly Life &amp; Money newsletter.</h2>
-        <form className="news__form" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
-          <label>First name*<input name="first" required autoComplete="given-name" /></label>
-          <label>Last name*<input name="last" required autoComplete="family-name" /></label>
-          <label>Email*<input name="email" type="email" required autoComplete="email" /></label>
-          <button className="btn btn--blue" type="submit">Sign me up</button>
+        <form className="news__form" autoComplete="off" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+          <label>Email<input name="email" type="email" autoComplete="off" /></label>
+          <button className="btn btn--blue" type="submit">Subscribe</button>
         </form>
-        <p className="note" role="status">{sent ? "Nothing was sent: this is a layout study and there is no newsletter." : "A form that sends nothing."}</p>
+        <p className="note" role="status">{sent ? "Nothing was sent: this is a layout study and there is no newsletter." : "Nothing you type here is sent or stored: this is a layout study and there is no newsletter."}</p>
       </div>
     </section>
   );
@@ -171,7 +169,7 @@ function NumberField({ id, label, hint, value, onChange, step = 1000 }: { id: st
   return (
     <div className="calc__field">
       <label htmlFor={id}>{label}</label>
-      <input id={id} type="number" inputMode="numeric" min={0} step={step} value={value} onChange={(e) => onChange(Math.max(0, Number(e.target.value) || 0))} aria-describedby={hint ? `${id}-h` : undefined} />
+      <input id={id} type="number" inputMode="numeric" autoComplete="off" min={0} step={step} value={value} onChange={(e) => onChange(Math.max(0, Number(e.target.value) || 0))} aria-describedby={hint ? `${id}-h` : undefined} />
       {hint && <p id={`${id}-h`} className="note">{hint}</p>}
     </div>
   );
@@ -222,7 +220,7 @@ export function Calculator() {
         <p className="band__kicker">Life Insurance Calculator</p>
         <h2 id="calc-title" className="section-title">How much life insurance is right for you?</h2>
         <p className="band__lesson">Add up what your household would need to carry on without your income, and subtract what it already has. Change any figure; nothing is sent.</p>
-        <form className="calc__form" onSubmit={(e) => e.preventDefault()} aria-label="Cover calculator">
+        <form className="calc__form" autoComplete="off" onSubmit={(e) => e.preventDefault()} aria-label="Cover calculator">
           <NumberField id="c-income" label="Annual income" value={income} onChange={setIncome} step={5000} />
           <NumberField id="c-years" label="Years of income to replace" hint="Often until the youngest child is independent." value={years} onChange={setYears} step={1} />
           <NumberField id="c-debts" label="Debts other than the mortgage" value={debts} onChange={setDebts} />
@@ -234,7 +232,7 @@ export function Calculator() {
         </form>
         <p className="band__note">{v === "desktop" ? `from=1 to=${n} · placement="top" · clockwise=true` : `two grids: from=1 to=3 · placement="top" / from=1 to=2`}</p>
         <div className="band__wrap" role="group" aria-label="Result" aria-live="polite">{grids}</div>
-        <p className="note">An illustration of the arithmetic, not advice. It quotes no price and nothing here can be bought.</p>
+        <p className="note">An illustration of the arithmetic, not advice. It quotes no price, nothing here can be bought, and nothing you enter leaves this page.</p>
       </div>
     </section>
   );

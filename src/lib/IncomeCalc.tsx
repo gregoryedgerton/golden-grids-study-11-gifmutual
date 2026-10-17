@@ -90,7 +90,7 @@ function Range({ label, value, min, max, step, onChange, format }: { label: stri
   return (
     <div className="irange">
       <label htmlFor={id}>{label}: <strong>{format(value)}</strong></label>
-      <input id={id} type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} aria-valuetext={format(value)} />
+      <input id={id} type="range" autoComplete="off" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} aria-valuetext={format(value)} />
       <span className="irange__ends" aria-hidden="true"><span>{format(min)}</span><span>{format(max)}</span></span>
     </div>
   );
@@ -189,7 +189,7 @@ export function IncomeCalc() {
 
   // --- The steps, one form in one square ---
   const form = (
-    <form className="icalc" noValidate onSubmit={(e) => { e.preventDefault(); next(); }} aria-label="Disability income calculator">
+    <form className="icalc" noValidate autoComplete="off" onSubmit={(e) => { e.preventDefault(); next(); }} aria-label="Disability income calculator">
       <ol className="icalc__steps" aria-label="Steps">
         {STEPS.map((s, i) => <li key={s} className={i + 1 === step ? "is-on" : i + 1 < step ? "is-done" : undefined} aria-current={i + 1 === step ? "step" : undefined}><span>{i + 1}</span>{s}</li>)}
       </ol>
@@ -206,7 +206,7 @@ export function IncomeCalc() {
             <legend>Which best describes your job?</legend>
             {(Object.keys(JOBS) as Job[]).map((k) => (
               <label key={k} className={a.job === k ? "is-on" : undefined}>
-                <input type="radio" name="ic-job" value={k} checked={a.job === k} onChange={() => set("job")(k)} />
+                <input type="radio" autoComplete="off" name="ic-job" value={k} checked={a.job === k} onChange={() => set("job")(k)} />
                 <span><strong>{JOBS[k].name}</strong><em>{JOBS[k].examples}</em></span>
               </label>
             ))}
@@ -231,7 +231,7 @@ export function IncomeCalc() {
             <legend>Do you have group cover through work?</legend>
             {(["yes", "no"] as const).map((k) => (
               <label key={k} className={a.group === k ? "is-on" : undefined}>
-                <input type="radio" name="ic-group" value={k} checked={a.group === k} onChange={() => set("group")(k)} />
+                <input type="radio" autoComplete="off" name="ic-group" value={k} checked={a.group === k} onChange={() => set("group")(k)} />
                 <span><strong>{k === "yes" ? "Yes" : "No"}</strong><em>{k === "yes" ? "Counted at 60% of monthly income" : "Estimated with no other cover in force"}</em></span>
               </label>
             ))}
@@ -316,7 +316,7 @@ export function IncomeCalc() {
               blocks: [
                 "Monthly income is your annual income divided by twelve. If you have group cover through work it is counted at 60% of that figure, the usual size of an employer's plan; if you do not, the estimate assumes no other cover is in force.",
                 "The cover you may need is the share of income you choose to replace, 80% unless you move it, less the group cover. The savings chart starts from the savings you entered and adds, each month, your cover less your expenses: once with individual cover and once without. The length of time is yours to set, because this study has no actuarial table to predict it from.",
-                "It is an illustration of arithmetic, not advice and not a quotation. No premium is shown, a real policy has limits, waiting periods and exclusions that are not modelled here, and nothing you entered has been stored or sent.",
+                "It is an illustration of arithmetic, not advice and not a quotation. No premium is shown, a real policy has limits, waiting periods and exclusions that are not modelled here, and nothing you entered has left this page: it is neither stored nor sent.",
               ],
             }} />
             <div className="wrap iresult__end">

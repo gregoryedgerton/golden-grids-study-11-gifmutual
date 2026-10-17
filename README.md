@@ -159,7 +159,8 @@ hold the figures and charts.
 Flat modules: the section bars' running text (`Prose`, with check lists and a
 figure panel), accordions of questions (original answers), the cover
 calculator, a quiz on the term and guide pages, the whole-versus-term table,
-the newsletter form, the guide's jump strip, the advisor's tab strip.
+the newsletter form (one email box, which sends nothing), the guide's jump strip,
+the advisor's tab strip.
 
 ## The subject
 

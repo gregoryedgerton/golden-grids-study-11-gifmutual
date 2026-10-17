@@ -2,10 +2,11 @@ import type { ReactNode } from "react";
 import { Tools } from "./tools";
 import { StudyBanner, StudyDisclosure } from "./study";
 import { Credits } from "./modules";
-import { NAV, UTILITY, FOOTER, PAGES } from "../content";
+import { NAV, FOOTER, PAGES } from "../content";
 
 /**
- * The shell, after the reference's: a utility strip, the wordmark and a row
+ * The shell, after the reference's: a utility strip (the advisor button only;
+ * no log-in or claims controls, see CLAUDE.md), the wordmark and a row
  * of letter-spaced navigation, an optional breadcrumb, the page, and a
  * deep-blue footer of link columns. Where the reference says who
  * it is, this says what it is instead: a layout study, not an insurer.
@@ -19,7 +20,6 @@ export function Page({ current, crumbs, source, children }: { current: string; c
       <header className="top">
         <div className="top__util">
           <div className="wrap top__utilwrap"><div className="top__utilrow">
-            <ul>{UTILITY.map((u) => <li key={u}><span>{u}</span></li>)}</ul>
             <a className="btn btn--gold btn--sm" href={PAGES.A}>Find a Financial Advisor</a>
           </div></div>
         </div>

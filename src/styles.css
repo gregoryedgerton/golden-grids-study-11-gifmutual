@@ -79,10 +79,7 @@ main { min-width: 0; }
 .notice { background: var(--grey); color: var(--text); padding: 6px 16px; }
 .notice p { margin: 0; font: 400 13px/1.4 var(--font); text-align: center; }
 .top__utilwrap { display: flex; justify-content: flex-end; }
-.top__utilrow { display: flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 12px 0 20px; background: var(--deep); color: #fff; }
-.top__util ul { margin: 0; padding: 0; list-style: none; display: flex; font: 500 13px/1 var(--font); letter-spacing: 1px; }
-.top__util li { padding: 0 14px; border-left: 1px solid rgba(255, 255, 255, 0.45); }
-.top__util li:first-child { border-left: 0; }
+.top__utilrow { display: flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 12px; background: var(--deep); color: #fff; }
 .top__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 32px; padding: 14px 0 10px; }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--deep); text-decoration: none; }
 @media (prefers-color-scheme: dark) { .wordmark { color: #fff; } }
@@ -205,7 +202,7 @@ main { min-width: 0; }
 .news__card { background: var(--white-bg); color: var(--white-fg); padding: 24px 28px 18px; border-radius: var(--radius); }
 .news__title { margin: 0 0 14px; font: 500 clamp(1.1rem, 2vw, 1.3rem)/1.3 var(--font); letter-spacing: 0.4px; color: var(--white-head); }
 .news__form { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); align-items: end; }
-@media (min-width: 900px) { .news__form { grid-template-columns: repeat(3, minmax(0, 1fr)) auto; } }
+@media (min-width: 900px) { .news__form { grid-template-columns: minmax(0, 1fr) auto; } }
 .news__form label { display: grid; gap: 4px; font: 400 13px/1.2 var(--font); color: var(--white-fg); }
 .news__form input { min-height: 48px; padding: 0 12px; font: 400 16px var(--font); color: #2c2c2c; background: #fff; border: 1px solid #8a8a8a; border-radius: 2px; }
 .news .note { margin-top: 10px; }

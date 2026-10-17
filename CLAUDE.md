@@ -335,3 +335,30 @@ opened in StackBlitz at `https://stackblitz.com/~/github.com/gregoryedgerton/gol
 - Do not append `?file=` to the `~/github.com` link; it made the IDE fail to
   start in testing. The classic `/github/` importer accepts `?file=` but waits
   on a WebSocket and can stall at "Cloning repo from GitHub".
+
+## Safe Browsing remediation (2026-10)
+
+On 2026-10-17 Google Safe Browsing flagged the whole origin
+gregoryedgerton.github.io as social engineering (pages that "try to trick
+visitors into sharing personal info"). The first trigger was a demo bank
+sign-in in Study 19; every study then lost anything that looks like
+collecting credentials or personal data. Nothing here ever sent anything; the
+scanner reads the appearance.
+
+**What changed**
+- The header's utility strip lost "Log in" and "Claims" (`UTILITY` is gone
+  from `src/content.ts`); it holds the advisor button alone. The footer's
+  "Claims" item went with it.
+- The newsletter (`Newsletter`, `src/lib/modules.tsx`) asked for first name,
+  last name and email with the browser's autofill tokens. It is one email box
+  with `autoComplete="off"`, a "Subscribe" button, and a note that nothing is
+  sent or stored.
+- Every input in the calculators and widgets (`IncomeCalc.tsx`, `Calculator`,
+  `widgets.tsx`) carries `autoComplete="off"`; their notes say nothing you
+  enter leaves the page.
+
+**Never bring back**: sign-in, log-in, sign-up or claims controls or labels,
+even inert ones; personal-data fields beyond one email box that says nothing
+is sent; personal autofill tokens (`email`, `name`, `given-name`,
+`family-name`, `tel`, `postal-code`, `street-address`, `cc-*`); links to a
+real login or account page.
