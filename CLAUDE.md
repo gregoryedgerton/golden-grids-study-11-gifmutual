@@ -19,7 +19,7 @@ choose each grid; `src/lib/modules.tsx` the flat modules (`Prose`, `Faq`,
 `src/photos.json` and `src/photos.ts` the photographs. Read
 `docs/program/PROGRAM.md`, then `STUDY-BRIEF.md`, then `README.md`.
 
-Live at https://gregoryedgerton.github.io/golden-grids-study-11-northwestern/;
+Live at https://gregoryedgerton.github.io/golden-grids-study-11-gifmutual/;
 pushing to `main` deploys.
 
 ## Rules that are not negotiable
@@ -362,3 +362,5 @@ even inert ones; personal-data fields beyond one email box that says nothing
 is sent; personal autofill tokens (`email`, `name`, `given-name`,
 `family-name`, `tel`, `postal-code`, `street-address`, `cc-*`); links to a
 real login or account page.
+
+- **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-11-northwestern` to `golden-grids-study-11-gifmutual`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.

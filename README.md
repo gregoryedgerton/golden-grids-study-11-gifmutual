@@ -2,7 +2,7 @@ GIFcommit00010
 
 # Layout study — seven pages of Northwestern Mutual, as GIFmutual
 
-**Live:** [`https://gregoryedgerton.github.io/golden-grids-study-11-northwestern/`](https://gregoryedgerton.github.io/golden-grids-study-11-northwestern/)
+**Live:** [`https://gregoryedgerton.github.io/golden-grids-study-11-gifmutual/`](https://gregoryedgerton.github.io/golden-grids-study-11-gifmutual/)
 
 An unaffiliated layout study. It rebuilds the structure of seven pages of
 [northwesternmutual.com](https://www.northwesternmutual.com/) as stacked
@@ -262,3 +262,5 @@ npm run dev
 `npm run build` type-checks and builds to `dist/`; pushing to `main` deploys
 to GitHub Pages. The library is consumed from npm at its published version,
 never linked locally.
+
+- **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-11-northwestern` to `golden-grids-study-11-gifmutual`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.
